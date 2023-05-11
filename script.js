@@ -82,7 +82,7 @@ $(document).ready(function () {
     leftBtn.on('click', function () {
         if (animating) return; // If the slider is currently animating, do not allow the user to click the button again until the animation is finished
 
-        animating = true;
+        animating = true; 
 
         //Upper slider
         let upperSliderItm = $(".upper-slider-image");
