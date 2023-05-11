@@ -42,8 +42,12 @@ $(document).ready(function () {
         leftBtn.children("img").attr('src', './assets/arrow-blue-left.png');
     });
 
+    let animating = false; // Variable for checking if the slider is currently animating
 
     rightBtn.on('click', function () {
+        if (animating) return; // If the slider is currently animating, do not allow the user to click the button again until the animation is finished
+
+        animating = true;
         //Upper slider
         let upperSliderItm = $(".upper-slider-image");
         let upperCurrentImage = upperSliderItm.last().prev()
@@ -55,7 +59,6 @@ $(document).ready(function () {
         let lowerCurrentImage = lowerSliderItm.last().prev()
 
         rightBtnClick(lowerSliderItm, lowerCurrentImage, lowerSliderRowInner) //Calling rightBtnClick slider handler function for lower slider
-
     })
 
     // Slider handler function for right button click
@@ -71,11 +74,16 @@ $(document).ready(function () {
             
             sliderRowInner.css('left', -newLastImg.width() - columnGap + 'px'); // Setting the left position of the slider to the negative width of the new first image that is overflowing on the left
 
+            animating = false;
          });
     }
 
 
     leftBtn.on('click', function () {
+        if (animating) return; // If the slider is currently animating, do not allow the user to click the button again until the animation is finished
+
+        animating = true;
+
         //Upper slider
         let upperSliderItm = $(".upper-slider-image");
         let upperCurrentImage = upperSliderItm.first().next()
@@ -93,11 +101,11 @@ $(document).ready(function () {
         let newLeftLower = parseInt(currentLowInnerLeft) - lowerCurrentImage.width() - columnGap 
 
         leftBtnClick(lowerSliderItm, lowerCurrentImage, lowerSliderRowInner, newLeftLower) //Calling leftBtnClick slider handler function for lower slider
-
     });
 
     const leftBtnClick = (sliderItem, currentImg, sliderRowInner, newLeft) => {
         sliderRowInner.animate({ left: newLeft + "px" }, 300, function () {
+            
             currentImg.remove(); // Delting the image that has just left the screen on the left
                 
             let newLastImg = sliderItem.last() //Getting the new visible image that is most right
@@ -107,9 +115,10 @@ $(document).ready(function () {
             sliderItem.first().replaceWith(newLastImg.clone()); // Replacing the first image that is overflowing on the left with the new image that is most right 
             
             sliderRowInner.css('left', -newLastImg.width() - columnGap + 'px'); // Setting the left position of the slider to the negative width of the new first image that is overflowing on the left
-         });
+            
+            animating = false;
+        });
     }
-
 });
 
 
