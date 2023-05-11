@@ -42,6 +42,7 @@ $(document).ready(function () {
         leftBtn.children("img").attr('src', './assets/arrow-blue-left.png');
     });
 
+    
     let animating = false; // Variable for checking if the slider is currently animating
 
     rightBtn.on('click', function () {
