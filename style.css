@@ -1,0 +1,108 @@
+body {
+  margin: 0;
+  padding: 0;
+  font: 100% Helvetica, sans-serif;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  column-gap: 20px;
+  height: fit-content;
+  position: relative;
+  left: calc(-50vW + 600px - 30px);
+}
+.wrapper .container .slider-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  row-gap: 5px;
+}
+.wrapper .container .slider-container .slider-row-upper {
+  height: 180px;
+  overflow: hidden;
+}
+.wrapper .container .slider-container .slider-row-upper .slider-row-upper-inner {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 10px;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.wrapper .container .lower-slider-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 180px;
+  width: 100%;
+}
+.wrapper .container .lower-slider-container .slider-row-lower {
+  height: 100%;
+  overflow: hidden;
+}
+.wrapper .container .lower-slider-container .slider-row-lower .slider-row-lower-inner {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 10px;
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+.wrapper .container .lower-slider-container .buttons-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  row-gap: 10px;
+  height: 100%;
+  flex-grow: 1;
+}
+.wrapper .container .lower-slider-container .buttons-container button {
+  color: #19376D;
+  background-color: transparent;
+  border-color: #19376D;
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 15px 18px;
+  transition: all 0.1s ease-in-out;
+}
+.wrapper .container .lower-slider-container .buttons-container button img {
+  height: 10px;
+}
+.wrapper .container .lower-slider-container .buttons-container button:hover {
+  border-color: #dedede;
+  cursor: pointer;
+}
+.wrapper .container .text-container {
+  height: 100%;
+  width: 30%;
+}
+.wrapper .container .text-container h2 {
+  color: #19376D;
+}
+.wrapper .container .text-container p {
+  color: #7c7c7c;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+img {
+  height: 100%;
+  border-radius: 5px;
+}
+
+/*# sourceMappingURL=style.css.map */
