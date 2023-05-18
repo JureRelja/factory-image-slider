@@ -1,0 +1,27 @@
+{
+  "name": "factory-slider",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "transpile": "babel ./js/input.js --out-file ./js/app.output.js --source-maps"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JureRelja/factory-image-slider.git"
+  },
+  "author": "Jure Reljanovic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JureRelja/factory-image-slider/issues"
+  },
+  "homepage": "https://github.com/JureRelja/factory-image-slider#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1"
+  },
+  "dependencies": {
+    "uglify-js": "^3.17.4"
+  }
+}

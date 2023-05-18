@@ -1,0 +1,164 @@
+$primary-color: #1a528d;
+$secondary-color: #777777;
+$gray-color: #d5d5d5;
+$width: 1200px;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        width: 940px;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+
+        .header {
+            width: 100%;
+            background-color: $gray-color;
+            height: 20%;
+            color: $gray-color;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        .outer-slider-container {
+            display: flex;
+            justify-content: flex-start;
+            align-items: top;
+            width: 100%;
+            column-gap: 10px;   
+            height: fit-content;
+            
+            
+            .slider-container {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                row-gap: 5px;
+                width: 70%;
+                direction: rtl;
+
+                .slider-row-upper {
+                    height: 180px;
+                    overflow: hidden;
+
+                        .slider-row-upper-inner {
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: center;
+                            column-gap: 10px;
+                            height: 100%;
+                            width: 100%;
+                            position: relative;
+                        }
+                    }
+                }
+
+                .lower-slider-container {
+                    display: flex;  
+                    justify-content: flex-start;   
+                    align-items: center;
+                    height: 180px;
+                
+                .slider-row-lower {
+                        height: 100%;
+                        overflow: hidden;
+                        width: 90%;
+
+                        .slider-row-lower-inner {
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: center;
+                            column-gap: 10px;
+                            height: 100%;
+                            position: relative;
+                        }
+                }
+
+                .buttons-container {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: top;
+                    align-items: flex-start;
+                    row-gap: 10px;
+                    height: 100%;
+                    width: 10%;
+                    
+                    button {
+                        color: $primary-color;
+                        background-color: transparent;
+                        border-color: $primary-color;
+                        border: 1px solid;
+                        border-radius: 5px;
+                        padding: 15px 18px;
+                        transition: all 0.1s ease-in-out;
+                        
+
+                        img {
+                            height: 15px;
+                        }
+
+                        &:hover {
+                            border-color: #dedede;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            } 
+
+            .text-container {
+                height: 100%;
+                width: 30%;
+                display: flex;
+                flex-direction: column;
+                justify-content: top;
+                align-items: flex-start;
+                row-gap: 5px;
+
+                h2 {
+                    margin: 0;
+                    color: $primary-color;
+                    font-weight: bold;
+                }
+
+                p {
+                    color: $secondary-color;
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 1.3;
+                }
+            }
+        }
+    }
+    
+    .footer {
+        background-color: $gray-color;
+        width: 100%;
+        height: 20%;
+        color: $gray-color;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+}
+
+img {
+    height: 100%;
+    border-radius: 5px;
+}
