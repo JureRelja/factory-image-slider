@@ -5,8 +5,25 @@ $(document).ready(function () {
     var columnGap = parseInt($(".slider-row-upper-inner").css('column-gap')); // Column gap is the same for the upper and lower slider rows
 
     var upperSliderRowInner = $(".slider-row-upper-inner"); // Getting the inner div of the upper slider row
-
     var lowerSliderRowInner = $(".slider-row-lower-inner"); // Getting the inner div of the lower slider row
+
+    var wrapperWidth = $(".wrapper").width(); // Getting the width of the wrapper div
+
+
+    var duplicateImages = function duplicateImages(sliderRow, images) {
+        // Function for duplicating images in the slider row until the width of the slider row is bigger than the width of the wrapper div
+        var sliderWidth = sliderRow.width(); // Getting the initial width of the slider row
+        var i = 0;
+        while (sliderWidth <= wrapperWidth) {
+            sliderRow.append($(images + ":eq(" + i + ")").clone()); // Cloning the image with index i and appending it to the slider row
+            sliderWidth += $(images + ":eq(" + i + ")").width(); // Adding the width of the cloned image to the width of the slider row
+            i++;
+        }
+    };
+
+    duplicateImages(upperSliderRowInner, ".upper-slider-image"); // Calling duplicateImages function for upper slider
+    duplicateImages(lowerSliderRowInner, ".lower-slider-image"); // Calling duplicateImages function for lower slider
+
 
     var leftBtn = $('#left-button');
     var rightBtn = $('#right-button');
